@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0a0b0d;
+  color: #d3d7de;
+}
+
+.btn-accent {
+  @apply inline-flex items-center justify-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-graphite-950 transition hover:bg-accent-dim hover:text-white disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center rounded-md border border-graphite-600 px-4 py-2 text-sm font-medium text-graphite-200 transition hover:border-accent hover:text-accent;
+}
+
+.card {
+  @apply rounded-lg border border-graphite-700 bg-graphite-900 p-6;
+}
+
+.input {
+  @apply w-full rounded-md border border-graphite-600 bg-graphite-800 px-3 py-2 text-sm text-graphite-200 placeholder:text-graphite-400 focus:border-accent focus:outline-none;
+}

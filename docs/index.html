@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VaultRecover</title>
+<meta name="description" content="Free, honest password recovery for your own ZIP and PDF files. It actually opens and verifies your files, never fakes progress." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#0b0f17;--surface:#121826;--surface-2:#182134;--border:#243049;--text:#e6e9f0;--text-2:#aab3c5;--text-3:#6b7689;--accent:#34d399;--accent-2:#38bdf8}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6f8fb;--surface:#ffffff;--surface-2:#f1f4f9;--border:#e2e7f0;--text:#0f172a;--text-2:#44506a;--text-3:#8a94a8;--accent:#059669;--accent-2:#0284c7}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.mono{font-family:"IBM Plex Mono",monospace}
+main{max-width:1000px;margin:0 auto;padding:0 16px 80px}
+header{text-align:center;padding:64px 16px 36px}
+.pill{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,transparent);border-radius:999px;padding:5px 12px;margin-bottom:18px}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.08;letter-spacing:-.02em;margin:0 0 14px}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lede{max-width:620px;margin:0 auto;color:var(--text-2);font-size:18px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.btn{text-decoration:none;font-weight:600;padding:12px 20px;border-radius:10px;border:1px solid var(--border);color:var(--text);background:var(--surface)}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:0;color:#04121a}
+h2{font-size:22px;margin:52px 0 16px;letter-spacing:-.01em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px}
+.card h3{margin:0 0 6px;font-size:16px}.card p{margin:0;color:var(--text-2);font-size:14px}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border)}th{color:var(--text-3);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+tr:last-child td{border-bottom:0}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.shots img{width:100%;border:1px solid var(--border);border-radius:12px;display:block}
+.shots figcaption{color:var(--text-3);font-size:13px;margin-top:6px}
+.note{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--text-2);font-size:14px}
+footer{text-align:center;color:var(--text-3);font-size:13px;border-top:1px solid var(--border);padding:24px 16px;margin-top:48px}
+code{background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <span class="pill">100% free — no plans, no payment, ever</span>
+  <h1>Locked out of your own file?<br><span>Recover the password, for real.</span></h1>
+  <p class="lede">VaultRecover actually opens and verifies your ZIP and PDF files against candidate passwords. No fake progress bars, no guessing games. If it says recovered, it decrypted the file.</p>
+  <div class="btns">
+    <a class="btn primary" href="LIVE_URL">Open the live app</a>
+    <a class="btn" href="https://github.com/KArT4206/VaultRecover">View on GitHub</a>
+  </div>
+</header>
+<main>
+  <section class="grid">
+    <div class="card"><h3>Verified, not guessed</h3><p>Every candidate is checked against your real file's encryption. A match is a confirmed decrypt, never a header guess.</p></div>
+    <div class="card"><h3>No payment, anywhere</h3><p>There is no billing code in the product. Fair use is handled with simple technical limits instead of a paywall.</p></div>
+    <div class="card"><h3>Your file stays yours</h3><p>Uploads are validated, processed for the one request, and removed. Nothing is kept after the attempt on the hosted build.</p></div>
+  </section>
+
+  <h2>What runs where</h2>
+  <table>
+    <thead><tr><th>Format</th><th>Hosted (live site)</th><th>Local install</th></tr></thead>
+    <tbody>
+      <tr><td>ZIP (traditional / ZipCrypto)</td><td>Works in-browser</td><td>Works</td></tr>
+      <tr><td>PDF</td><td>Run locally</td><td>Works (qpdf)</td></tr>
+      <tr><td>Office · 7-Zip</td><td>Run locally</td><td>Works</td></tr>
+    </tbody>
+  </table>
+  <p class="note">The live site verifies traditional-PKWARE <strong>ZIP</strong> passwords entirely inside a serverless function — no worker, no command-line tools. Pure-TypeScript ZipCrypto, parity-tested against the <code>unzip</code> binary with zero false positives. Other formats recover in the local worker, and the UI says so honestly.</p>
+
+  <h2>A look inside</h2>
+  <div class="shots">
+    <figure><img src="screenshots/landing.png" alt="VaultRecover landing page"><figcaption>Landing</figcaption></figure>
+    <figure><img src="screenshots/how-it-works.png" alt="How it works page"><figcaption>How it works</figcaption></figure>
+    <figure><img src="screenshots/file-types.png" alt="Supported file types"><figcaption>Supported formats</figcaption></figure>
+    <figure><img src="screenshots/faq.png" alt="Frequently asked questions"><figcaption>FAQ</figcaption></figure>
+  </div>
+
+  <h2>Documentation</h2>
+  <div class="grid">
+    <div class="card"><h3><a href="https://github.com/KArT4206/VaultRecover/blob/main/docs/ARCHITECTURE.md">Architecture</a></h3><p>Components and data flow, hosted and local.</p></div>
+    <div class="card"><h3><a href="https://github.com/KArT4206/VaultRecover/blob/main/docs/SECURITY.md">Security</a></h3><p>Validation, limits, and what's deferred.</p></div>
+    <div class="card"><h3><a href="https://github.com/KArT4206/VaultRecover/blob/main/docs/DEPLOYMENT.md">Deployment</a></h3><p>Vercel + Neon, and the full local setup.</p></div>
+    <div class="card"><h3><a href="https://github.com/KArT4206/VaultRecover/blob/main/docs/API.md">API</a></h3><p>Every route and its contract.</p></div>
+  </div>
+</main>
+<footer>VaultRecover · free file password recovery · recover passwords only for files you own or are authorised to access</footer>
+</body>
+</html>
