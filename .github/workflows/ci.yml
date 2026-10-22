@@ -36,9 +36,9 @@ jobs:
       - run: npm ci
       - run: npx prisma generate
       - run: npx prisma migrate deploy
-      - run: npm run lint
-      - run: npm run typecheck
       - name: Stub git-ignored test fixture passwords (fixture tests skip without the files)
         run: test -f tests/fixtures.password.json || echo '{}' > tests/fixtures.password.json
+      - run: npm run lint
+      - run: npm run typecheck
       - run: npm run test
       - run: npm run build

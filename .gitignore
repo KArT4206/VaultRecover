@@ -3,9 +3,10 @@ node_modules
 out
 .env
 .env.local
-storage/
+/storage/
 *.log
 .DS_Store
 /coverage
 /fixtures
 tests/fixtures.password.json
+*.tsbuildinfo
