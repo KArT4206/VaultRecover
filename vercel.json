@@ -3,6 +3,11 @@
   "buildCommand": "prisma generate && next build",
   "framework": "nextjs",
   "functions": {
-    "app/api/recovery/online/route.ts": { "maxDuration": 60 }
-  }
+    "app/api/recovery/online/route.ts": {
+      "maxDuration": 60
+    }
+  },
+  "regions": [
+    "sin1"
+  ]
 }

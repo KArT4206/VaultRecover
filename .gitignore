@@ -10,3 +10,5 @@ out
 /fixtures
 tests/fixtures.password.json
 *.tsbuildinfo
+.vercel
+.env*.local
