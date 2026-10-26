@@ -15,6 +15,8 @@ is enforced with simple technical limits instead of a paywall.
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 
+**Live app:** [vaultrecover-topaz.vercel.app](https://vaultrecover-topaz.vercel.app) · **Docs site:** [kart4206.github.io/VaultRecover](https://kart4206.github.io/VaultRecover/)
+
 </div>
 
 > **Intended use.** VaultRecover is for recovering passwords to files **you own or
